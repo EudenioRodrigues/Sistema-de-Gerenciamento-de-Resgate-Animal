@@ -11,6 +11,7 @@ public class Voluntario implements Cuidavel {
     private String email;
     private LocalDate dataNascimento;
     private List<Animal> animaisResgatados;
+    private boolean ativo;
 
     public Voluntario(String nome, String cpf, String telefone, String endereco, String email,
                       LocalDate dataNascimento, List<Animal> animaisResgatados) {
@@ -21,6 +22,7 @@ public class Voluntario implements Cuidavel {
         this.email = email;
         this.dataNascimento = dataNascimento;
         this.animaisResgatados = animaisResgatados;
+        this.ativo = true;
     }
 
     public boolean isStringValida(String s) {
@@ -117,9 +119,32 @@ public class Voluntario implements Cuidavel {
         }
     }
 
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public void ativar() {
+        this.ativo = true;
+        System.out.println("O voluntário " + nome + " foi ativado.");
+    }
+    
+    public void desativar() {
+        this.ativo = false;
+        System.out.println("O voluntário " + nome + " foi desativado.");
+    }
+
     @Override
     public void avaliarCondicao() {  
-        System.out.println("Voluntário " + nome + " está ativo."); 
+        if (ativo) {
+            System.out.println("O voluntário " + nome + " está ativo e apto a cuidar dos animais.");
+        } else {
+            System.out.println("O voluntário " + nome + " não está ativo.");
+            
+        }
     }
 
     public void exibirDetalhes() {

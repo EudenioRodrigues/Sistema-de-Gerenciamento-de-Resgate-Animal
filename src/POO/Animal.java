@@ -1,7 +1,6 @@
 package POO;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class Animal implements Cuidavel {
     private String nome;
