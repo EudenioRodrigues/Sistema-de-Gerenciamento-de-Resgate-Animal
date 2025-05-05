@@ -86,7 +86,7 @@ public class Animal implements Cuidavel {
     }
     
     public void setIdade(int idade) {
-        if (idade >= 0) {
+        if (idade > 0) {
             this.idade = idade;
         } else {
             System.out.println("Idade inválida!");

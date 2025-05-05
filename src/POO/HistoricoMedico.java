@@ -124,7 +124,11 @@ public class HistoricoMedico {
     }
 
     public void setDoencasPreexistentes(List<String> doencasPreexistentes) {
-        this.doencasPreexistentes = doencasPreexistentes;
+        if (doencasPreexistentes != null && !doencasPreexistentes.isEmpty()) {
+            this.doencasPreexistentes = doencasPreexistentes;
+        } else {
+            System.out.println("Lista de doenças preexistentes inválida!");
+        }
     }
 
     public List<String> getAlergias() {
@@ -132,7 +136,11 @@ public class HistoricoMedico {
     }
 
     public void setAlergias(List<String> alergias) {
-        this.alergias = alergias;
+        if (alergias != null && !alergias.isEmpty()) {
+            this.alergias = alergias;
+        } else {
+            System.out.println("Lista de alergias inválida!");
+        }
     }
 
     public List<String> getMedicamentosEmUso() {
@@ -140,7 +148,11 @@ public class HistoricoMedico {
     }
 
     public void setMedicamentosEmUso(List<String> medicamentosEmUso) {
-        this.medicamentosEmUso = medicamentosEmUso;
+        if (medicamentosEmUso != null && !medicamentosEmUso.isEmpty()) {
+            this.medicamentosEmUso = medicamentosEmUso;
+        } else {
+            System.out.println("Lista de medicamentos em uso inválida!");
+        }
     }
 
     public List<String> getCirurgiasAnteriores() {
@@ -148,7 +160,11 @@ public class HistoricoMedico {
     }
 
     public void setCirurgiasAnteriores(List<String> cirurgiasAnteriores) {
-        this.cirurgiasAnteriores = cirurgiasAnteriores;
+        if (cirurgiasAnteriores != null && !cirurgiasAnteriores.isEmpty()) {
+            this.cirurgiasAnteriores = cirurgiasAnteriores;
+        } else {
+            System.out.println("Lista de cirurgias anteriores inválida!");
+    }
     }
 
     public List<String> getExamesRealizados() {
@@ -156,7 +172,11 @@ public class HistoricoMedico {
     }
 
     public void setExamesRealizados(List<String> examesRealizados) {
-        this.examesRealizados = examesRealizados;
+        if (examesRealizados != null && !examesRealizados.isEmpty()) {
+            this.examesRealizados = examesRealizados;
+        } else {
+            System.out.println("Lista de exames realizados inválida!");
+        }
     }
 
     public List<String> getVacinas() {
@@ -164,7 +184,11 @@ public class HistoricoMedico {
     }
 
     public void setVacinas(List<String> vacinas) {
-        this.vacinas = vacinas;
+        if (vacinas != null && !vacinas.isEmpty()) {
+            this.vacinas = vacinas;
+        } else {
+            System.out.println("Lista de vacinas inválida!");
+        }
     }
     
     public void exibirDetalhes() {
