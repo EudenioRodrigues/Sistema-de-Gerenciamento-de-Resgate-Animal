@@ -14,7 +14,7 @@ public class Main {
 
     // Criando um animal        
     Animal animal = new Animal("Rex", "Cachorro", "Pitbull", 5, "Macho", 30.0,
-        "Gosta de crianças", true, null, voluntario1, false);
+        "Gosta de crianças", true, null, voluntario1);
 
     // Criando uma clínica veterinária    
     ClinicaVeterinaria clinica1 = new ClinicaVeterinaria("Clínica Central", "Rua Principal, 123", "12345678901", "contato@clinicacentral.com", new ArrayList<>());
@@ -70,7 +70,7 @@ public class Main {
     
     // Testando adição e remoção de animais na clínica
     Animal animal2 = new Animal("Luna", "Gato", "Siamês", 3, "Fêmea", 4.5,
-            "Muito dócil", true, null, voluntario1, false);
+            "Muito dócil", true, null, voluntario1);
     clinica1.adicionarAnimal(animal2);
     clinica1.removerAnimal(animal2);
 

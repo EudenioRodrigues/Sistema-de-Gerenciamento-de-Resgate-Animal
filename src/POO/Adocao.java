@@ -11,6 +11,7 @@ public class Adocao {
         this.animal = animal;
         this.adotante = adotante;
         this.dataAdocao = dataAdocao;
+        this.animal.setAdotado(true);
     }
     
     public void registrarAdocao() {

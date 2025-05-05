@@ -17,9 +17,9 @@ public class Animal implements Cuidavel {
 
     public Animal(String nome, String especie, String raca, int idade, String sexo, double peso,
                   String observacoes, boolean castrado, 
-                  HistoricoMedico historicoMedico, Voluntario voluntario, boolean adotado) {
+                  HistoricoMedico historicoMedico, Voluntario voluntario) {
                     
-        this.adotado = adotado;
+        this.adotado = false;
         this.voluntario = voluntario;
         this.nome = nome;
         this.especie = especie;
@@ -153,6 +153,14 @@ public class Animal implements Cuidavel {
         this.voluntario = voluntario;
     }
     
+    public boolean isAdotado() {
+        return adotado;
+    }
+
+    public void setAdotado(boolean adotado) {
+        this.adotado = adotado;
+    }
+
     private ClinicaVeterinaria clinicaVeterinaria;
 
     public void setClinicaVeterinaria(ClinicaVeterinaria clinica) {
@@ -244,9 +252,9 @@ public class Animal implements Cuidavel {
         // Registra a adoção
         Adocao adocao = new Adocao(this, adotante, LocalDate.now());
         adocao.registrarAdocao();
-    
+        
         // Marca o animal como adotado
-        adotado = true;
+        this.adotado = true;
     
         System.out.println("O animal " + nome + " foi encaminhado para adoção com sucesso!");
         System.out.println("=============================================================");
