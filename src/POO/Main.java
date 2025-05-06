@@ -70,5 +70,7 @@ public class Main {
     voluntario1.exibirDetalhes();
 
     animal.encaminharParaAdocao(adotante);
+    clinica1.adicionarAnimal(animal2);
+    clinica1.exibirDetalhes();
     }
 }

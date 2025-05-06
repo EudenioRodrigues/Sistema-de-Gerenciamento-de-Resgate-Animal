@@ -96,5 +96,16 @@ public class ClinicaVeterinaria {
             animal.setClinicaVeterinaria(null); 
         }
     }
-    
+
+    public void exibirDetalhes() {
+        System.out.println("Nome da Clínica: " + nomeClinica);
+        System.out.println("Endereço: " + enderecoClinica);
+        System.out.println("Telefone: " + telefoneClinica);
+        System.out.println("E-mail: " + emailClinica);
+        System.out.println("Animais em Tratamento: ");
+        for (Animal animal : animaisEmTratamento) {
+            System.out.println("- " + animal.getNome());
+        }
+        System.out.println("=========================================================");
+    }
 }
