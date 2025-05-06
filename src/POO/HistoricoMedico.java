@@ -21,55 +21,30 @@ public class HistoricoMedico {
         this.vacinas = new ArrayList<>();
     }
 
-    public void adicionarDoencaPreexistente(String doenca) {
-        if (doenca != null && !doenca.isEmpty()) {
-            this.doencasPreexistentes.add(doenca);
-        } else {
-            System.out.println("Doença inválida!");
-        }
+    public List<String> getDoencasPreexistentes() {
+        return doencasPreexistentes;
     }
 
-    public void adicionarAlergia(String alergia) {
-        if (alergia != null && !alergia.isEmpty()) {
-            this.alergias.add(alergia);
-        } else {
-            System.out.println("Alergia inválida!");
-        }
+    public List<String> getAlergias() {
+        return alergias;
     }
 
-    public void adicionarMedicamento(String medicamento) {
-        if (medicamento != null && !medicamento.isEmpty()) {
-            this.medicamentosEmUso.add(medicamento);
-        } else {
-            System.out.println("Medicamento inválido!");
-        }
+    public List<String> getMedicamentosEmUso() {
+        return medicamentosEmUso;
     }
 
-    public void adicionarCirurgia(String cirurgia) {
-        if (cirurgia != null && !cirurgia.isEmpty()) {
-            this.cirurgiasAnteriores.add(cirurgia);
-        } else {
-            System.out.println("Cirurgia inválida!");
-        }
+    public List<String> getCirurgiasAnteriores() {
+        return cirurgiasAnteriores;
     }
 
-    public void adicionarExame(String exame) {
-        if (exame != null && !exame.isEmpty()) {
-            this.examesRealizados.add(exame);
-        } else {
-            System.out.println("Exame inválido!");
-        }
+    public List<String> getExamesRealizados() {
+        return examesRealizados;
     }
 
-    public void adicionarVacina(String vacina) {
-        if (vacina != null && !vacina.isEmpty()) {
-            this.vacinas.add(vacina);
-        } else {
-            System.out.println("Vacina inválida!");
-        }
+    public List<String> getVacinas() {
+        return vacinas;
     }
 
-    // Métodos para adicionar múltiplos itens
     public void adicionarDoencasPreexistentes(List<String> doencas) {
         if (doencas != null && !doencas.isEmpty()) {
             this.doencasPreexistentes.addAll(doencas);
@@ -118,55 +93,54 @@ public class HistoricoMedico {
         }
     }
 
-    // Getters e setters permanecem os mesmos
-    public List<String> getDoencasPreexistentes() {
-        return doencasPreexistentes;
-    }
-
-    public void setDoencasPreexistentes(List<String> doencasPreexistentes) {
-        this.doencasPreexistentes = doencasPreexistentes;
-    }
-
-    public List<String> getAlergias() {
-        return alergias;
-    }
-
-    public void setAlergias(List<String> alergias) {
-        this.alergias = alergias;
-    }
-
-    public List<String> getMedicamentosEmUso() {
-        return medicamentosEmUso;
-    }
-
-    public void setMedicamentosEmUso(List<String> medicamentosEmUso) {
-        this.medicamentosEmUso = medicamentosEmUso;
-    }
-
-    public List<String> getCirurgiasAnteriores() {
-        return cirurgiasAnteriores;
-    }
-
-    public void setCirurgiasAnteriores(List<String> cirurgiasAnteriores) {
-        this.cirurgiasAnteriores = cirurgiasAnteriores;
-    }
-
-    public List<String> getExamesRealizados() {
-        return examesRealizados;
-    }
-
-    public void setExamesRealizados(List<String> examesRealizados) {
-        this.examesRealizados = examesRealizados;
-    }
-
-    public List<String> getVacinas() {
-        return vacinas;
-    }
-
-    public void setVacinas(List<String> vacinas) {
-        this.vacinas = vacinas;
+    public void removerDoencaPreexistente(String doenca) {
+        if (doenca != null && doencasPreexistentes.contains(doenca)) {
+            this.doencasPreexistentes.remove(doenca);
+        } else {
+            System.out.println("Doença não encontrada ou inválida!");
+        }
     }
     
+    public void removerAlergia(String alergia) {
+        if (alergia != null && alergias.contains(alergia)) {
+            this.alergias.remove(alergia);
+        } else {
+            System.out.println("Alergia não encontrada ou inválida!");
+        }
+    }
+    
+    public void removerMedicamento(String medicamento) {
+        if (medicamento != null && medicamentosEmUso.contains(medicamento)) {
+            this.medicamentosEmUso.remove(medicamento);
+        } else {
+            System.out.println("Medicamento não encontrado ou inválido!");
+        }
+    }
+    
+    public void removerCirurgia(String cirurgia) {
+        if (cirurgia != null && cirurgiasAnteriores.contains(cirurgia)) {
+            this.cirurgiasAnteriores.remove(cirurgia);
+        } else {
+            System.out.println("Cirurgia não encontrada ou inválida!");
+        }
+    }
+    
+    public void removerExame(String exame) {
+        if (exame != null && examesRealizados.contains(exame)) {
+            this.examesRealizados.remove(exame);
+        } else {
+            System.out.println("Exame não encontrado ou inválido!");
+        }
+    }
+    
+    public void removerVacina(String vacina) {
+        if (vacina != null && vacinas.contains(vacina)) {
+            this.vacinas.remove(vacina);
+        } else {
+            System.out.println("Vacina não encontrada ou inválida!");
+        }
+    }
+
     public void exibirDetalhes() {
         System.out.println("====================Histórico Médico===================");
         System.out.println("Doenças Preexistentes: " + doencasPreexistentes);
@@ -176,6 +150,6 @@ public class HistoricoMedico {
         System.out.println("Exames Realizados: " + examesRealizados);
         System.out.println("Vacinas: " + vacinas);
         System.out.println("=======================================================");
+        
     }
-
 }

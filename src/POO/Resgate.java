@@ -8,9 +8,9 @@ public class Resgate {
     private LocalDate dataResgate;
     
     public Resgate(Animal animal, Voluntario voluntario, LocalDate dataResgate) {
-        this.animal = animal;
-        this.voluntario = voluntario;
-        this.dataResgate = dataResgate;
+        setAnimal(animal);
+        setVoluntario(voluntario);
+        setDataResgate(dataResgate);
     }
 
     public Animal getAnimal() {

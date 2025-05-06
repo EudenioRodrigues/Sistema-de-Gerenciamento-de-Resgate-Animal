@@ -15,14 +15,14 @@ public class Voluntario implements Cuidavel {
 
     public Voluntario(String nome, String cpf, String telefone, String endereco, String email,
                       LocalDate dataNascimento, List<Animal> animaisResgatados) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.email = email;
-        this.dataNascimento = dataNascimento;
-        this.animaisResgatados = animaisResgatados;
-        this.ativo = true;
+        setNome(nome);
+        setCpf(cpf);
+        setTelefone(telefone);
+        setEndereco(endereco);
+        setEmail(email);
+        setDataNascimento(dataNascimento);
+        setAnimaisResgatados(animaisResgatados);
+
     }
 
     public boolean isStringValida(String s) {

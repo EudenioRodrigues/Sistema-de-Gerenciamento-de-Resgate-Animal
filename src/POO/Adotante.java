@@ -7,10 +7,10 @@ public class Adotante {
     private String email;
 
     public Adotante(String nome, String endereco, String telefone, String email) {
-        this.nome = nome;
-        this.endereco = endereco;
-        this.telefone = telefone;
-        this.email = email;
+        setNome(nome);
+        setEndereco(endereco);
+        setTelefone(telefone);
+        setEmail(email);
     }
 
     private boolean isStringValida(String s) {

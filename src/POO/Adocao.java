@@ -8,12 +8,48 @@ public class Adocao {
     private LocalDate dataAdocao;
 
     public Adocao(Animal animal, Adotante adotante, LocalDate dataAdocao) {
-        this.animal = animal;
-        this.adotante = adotante;
-        this.dataAdocao = dataAdocao;
+        setAnimal(animal);
+        setAdotante(adotante);
+        setDataAdocao(dataAdocao);
         this.animal.setAdotado(true);
     }
     
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        if (animal != null) {
+            this.animal = animal;
+        }
+    }
+
+    public Adotante getAdotante() {
+        return adotante;
+    }
+
+    public void setAdotante(Adotante adotante) {
+        if (adotante != null) {
+            this.adotante = adotante;
+        }
+    }
+
+    public LocalDate getDataAdocao() {
+        return dataAdocao;
+    }
+
+    public void setDataAdocao(LocalDate dataAdocao) {
+        if(dataAdocao != null) {
+            if (dataAdocao.isAfter(LocalDate.now())) {
+                System.out.println("Data de adoção não pode ser futura!");
+                return;
+            }
+            this.dataAdocao = dataAdocao;
+        } else {
+            System.out.println("Data de adoção inválida!");
+        }
+    }
+
     public void registrarAdocao() {
         System.out.println("==================Adoção==================");
         System.out.println("Adoção registrada:");

@@ -11,11 +11,11 @@ public class ClinicaVeterinaria {
 
 
     public ClinicaVeterinaria(String nomeClinica, String enderecoClinica, String telefoneClinica, String emailClinica, List<Animal> animaisEmTratamento) {
-        this.nomeClinica = nomeClinica;
-        this.enderecoClinica = enderecoClinica;
-        this.telefoneClinica = telefoneClinica;
-        this.emailClinica = emailClinica;
-        this.animaisEmTratamento = animaisEmTratamento;
+        setNomeClinica(nomeClinica);
+        setEnderecoClinica(enderecoClinica);
+        setTelefoneClinica(telefoneClinica);
+        setEmailClinica(emailClinica);
+        setAnimaisEmTratamento(animaisEmTratamento);
     }
 
     public boolean isStringValida(String s) {

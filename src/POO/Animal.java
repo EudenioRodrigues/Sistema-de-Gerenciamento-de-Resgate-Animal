@@ -16,28 +16,22 @@ public class Animal implements Cuidavel {
     private boolean adotado = false;
 
     public Animal(String nome, String especie, String raca, int idade, String sexo, double peso,
-                  String observacoes, boolean castrado, 
-                  HistoricoMedico historicoMedico, Voluntario voluntario) {
-                    
-        this.adotado = false;
-        this.voluntario = voluntario;
-        this.nome = nome;
-        this.especie = especie;
-        this.raca = raca;
-        this.idade = idade;
-        this.peso = peso;
-        this.sexo = sexo;
-        this.observacoes = observacoes;
-        this.castrado = castrado;
-        this.historicoMedico = historicoMedico;
+                  String observacoes, boolean castrado, Voluntario voluntario) {
+        setNome(nome);
+        setEspecie(especie);
+        setRaca(raca);
+        setIdade(idade);
+        setPeso(peso);
+        setSexo(sexo);
+        setObservacoes(observacoes);
+        setCastrado(castrado);
+        setHistoricoMedico(null);
+        setVoluntario(voluntario);
+        setAdotado(false);
 
-        if (voluntario != null) {
-            Resgate resgate = new Resgate(this, voluntario, LocalDate.now());
-            resgate.registrar();
-            resgate.exibirDetalhes();
-        } else {
-            System.out.println("Voluntário não informado. Resgate não registrado.");
-        }
+        Resgate resgate = new Resgate(this, voluntario, LocalDate.now());
+        resgate.registrar();
+        resgate.exibirDetalhes();
 
     }
 
@@ -252,7 +246,7 @@ public class Animal implements Cuidavel {
         // Registra a adoção
         Adocao adocao = new Adocao(this, adotante, LocalDate.now());
         adocao.registrarAdocao();
-        
+        adocao.exibirDetalhes();
         // Marca o animal como adotado
         this.adotado = true;
     
