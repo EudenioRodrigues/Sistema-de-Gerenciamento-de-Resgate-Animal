@@ -100,7 +100,7 @@ public class HistoricoMedico {
             System.out.println("Doença não encontrada ou inválida!");
         }
     }
-    
+
     public void removerAlergia(String alergia) {
         if (alergia != null && alergias.contains(alergia)) {
             this.alergias.remove(alergia);
@@ -108,7 +108,7 @@ public class HistoricoMedico {
             System.out.println("Alergia não encontrada ou inválida!");
         }
     }
-    
+
     public void removerMedicamento(String medicamento) {
         if (medicamento != null && medicamentosEmUso.contains(medicamento)) {
             this.medicamentosEmUso.remove(medicamento);
@@ -150,6 +150,6 @@ public class HistoricoMedico {
         System.out.println("Exames Realizados: " + examesRealizados);
         System.out.println("Vacinas: " + vacinas);
         System.out.println("=======================================================");
-        
-    }
+
+        }
 }
