@@ -13,7 +13,8 @@ public class Animal implements Cuidavel {
     private boolean castrado;
     private HistoricoMedico historicoMedico;
     private Voluntario voluntario;
-    private boolean adotado = false;
+    private boolean adotado;
+    private ClinicaVeterinaria clinicaVeterinaria;
 
     public Animal(String nome, String especie, String raca, int idade, String sexo, double peso,
                   String observacoes, boolean castrado, Voluntario voluntario) {
@@ -28,6 +29,7 @@ public class Animal implements Cuidavel {
         setHistoricoMedico(null);
         setVoluntario(voluntario);
         setAdotado(false);
+        setClinicaVeterinaria(null);
 
         Resgate resgate = new Resgate(this, voluntario, LocalDate.now());
         resgate.registrar();
@@ -144,7 +146,9 @@ public class Animal implements Cuidavel {
     }
 
     public void setVoluntario(Voluntario voluntario) {
-        this.voluntario = voluntario;
+        if (voluntario != null) {
+            this.voluntario = voluntario;
+        }
     }
     
     public boolean isAdotado() {
@@ -155,7 +159,9 @@ public class Animal implements Cuidavel {
         this.adotado = adotado;
     }
 
-    private ClinicaVeterinaria clinicaVeterinaria;
+    public ClinicaVeterinaria getClinicaVeterinaria() {
+        return clinicaVeterinaria;
+    }
 
     public void setClinicaVeterinaria(ClinicaVeterinaria clinica) {
         this.clinicaVeterinaria = clinica;
@@ -244,14 +250,11 @@ public class Animal implements Cuidavel {
         }
         
         // Registra a adoção
-        Adocao adocao = new Adocao(this, adotante, LocalDate.now());
-        adocao.registrarAdocao();
-        adocao.exibirDetalhes();
-        // Marca o animal como adotado
-        this.adotado = true;
-    
         System.out.println("O animal " + nome + " foi encaminhado para adoção com sucesso!");
         System.out.println("=============================================================");
+        Adocao adocao = new Adocao(this, adotante, LocalDate.now());
+        adocao.registrarAdocao();
+        adocao.exibirDetalhes();    
     }
 
     public void exibirDetalhes() {
@@ -265,6 +268,10 @@ public class Animal implements Cuidavel {
         System.out.println("Observações: " + observacoes);
         System.out.println("Voluntário: " + voluntario.getNome());
         System.out.println("Castrado: " + (castrado ? "Sim" : "Não"));
-        historicoMedico.exibirDetalhes();
+        if (historicoMedico != null) {
+            System.out.println("Histórico Médico: " + historicoMedico.toString());
+        } else {
+            System.out.println("Histórico Médico: Não disponível");
+        }
     }
 }

@@ -54,7 +54,6 @@ public class Adocao {
         System.out.println("==================Adoção==================");
         System.out.println("Adoção registrada:");
         System.out.println("Animal: " + animal.getNome());
-        System.out.println("Adotante: " + adotante.getNome());
         System.out.println("Data da adoção: " + dataAdocao);
         System.out.println("=============================================");
     }

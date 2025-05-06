@@ -84,7 +84,7 @@ public class ClinicaVeterinaria {
     }
 
     public void adicionarAnimal(Animal animal) {
-        if (!animaisEmTratamento.contains(animal)) {
+        if (!animaisEmTratamento.contains(animal) && animal.getClinicaVeterinaria() == null) {
             animaisEmTratamento.add(animal);
             animal.setClinicaVeterinaria(this); 
         }

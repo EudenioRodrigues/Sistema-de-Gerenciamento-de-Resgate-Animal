@@ -9,13 +9,13 @@ public class Main {
 
     // Criando um voluntário
     Voluntario voluntario1 = new Voluntario("Ruan", "12345678911", "88997841263", 
-            "Barreiras dos paraibanos", "oruan666@gmail.co", LocalDate.of(2003, 05, 12),
+            "Barreiras dos paraibanos", "oruan666@gmail.com", LocalDate.of(2003, 05, 12),
             new ArrayList<>());
 
     // Criando um animal        
     Animal animal = new Animal("Rex", "Cachorro", "Pitbull", 5, "Macho", 30.0,
         "Gosta de crianças", true,voluntario1);
-
+    
     // Criando uma clínica veterinária    
     ClinicaVeterinaria clinica1 = new ClinicaVeterinaria("Clínica Central", "Rua Principal, 123", "12345678901", "contato@clinicacentral.com", new ArrayList<>());
     clinica1.adicionarAnimal(animal);
@@ -25,7 +25,7 @@ public class Main {
         "maria@gmail.com");
     
     // Criando um histórico médico de Rex    
-    HistoricoMedico historicoMedicoRex = new HistoricoMedico();
+    HistoricoMedico historicoMedicoRex = new HistoricoMedico(animal);
 
     // Adicionando múltiplos itens de uma vez
     historicoMedicoRex.adicionarDoencasPreexistentes(List.of("Cinomose", "Parvovirose"));
@@ -37,8 +37,8 @@ public class Main {
     
     // Adicionando o histórico médico ao animal
     animal.setHistoricoMedico(historicoMedicoRex);
-
     // Avalaindo a saúde e condição do animal
+
     animal.avaliarSaude();
     animal.avaliarCondicao();
     animal.exibirDetalhes();
@@ -65,8 +65,10 @@ public class Main {
     // Testando adição e remoção de animais na clínica
     Animal animal2 = new Animal("Luna", "Gato", "Siamês", 3, "Fêmea", 4.5,
             "Muito dócil", true, voluntario1);
-    clinica1.adicionarAnimal(animal2);
-    clinica1.removerAnimal(animal2);
+    animal2.exibirDetalhes();
+    
+    voluntario1.exibirDetalhes();
 
+    animal.encaminharParaAdocao(adotante);
     }
 }

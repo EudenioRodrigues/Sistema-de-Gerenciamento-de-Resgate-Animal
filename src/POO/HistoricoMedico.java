@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HistoricoMedico {
+    private Animal animal;
     private List<String> doencasPreexistentes;
     private List<String> alergias;
     private List<String> medicamentosEmUso;
@@ -12,13 +13,26 @@ public class HistoricoMedico {
     private List<String> vacinas;
 
     // Construtor sem parâmetros que inicializa as listas vazias
-    public HistoricoMedico() {
+    public HistoricoMedico(Animal animal) {
+        setAnimal(animal);
         this.doencasPreexistentes = new ArrayList<>();
         this.alergias = new ArrayList<>();
         this.medicamentosEmUso = new ArrayList<>();
         this.cirurgiasAnteriores = new ArrayList<>();
         this.examesRealizados = new ArrayList<>();
         this.vacinas = new ArrayList<>();
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        if (animal != null) {
+            this.animal = animal;
+        } else {
+            System.out.println("Animal inválido!");
+        }
     }
 
     public List<String> getDoencasPreexistentes() {
