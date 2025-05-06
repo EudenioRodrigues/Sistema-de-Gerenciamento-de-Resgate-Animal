@@ -57,7 +57,6 @@ public class Resgate {
 
     public void registrar() {
         voluntario.getAnimaisResgatados().add(animal);
-        animal.setVoluntario(voluntario);
         System.out.println("==================Resgate==================");
         System.out.println("Resgate registrado de " + animal.getNome() + " por " + voluntario.getNome());
         System.out.println("=============================================");
