@@ -263,8 +263,8 @@ public class Animal implements Cuidavel {
         System.out.println("Peso: " + peso);
         System.out.println("Sexo: " + sexo);
         System.out.println("Observações: " + observacoes);
+        System.out.println("Voluntário: " + voluntario.getNome());
         System.out.println("Castrado: " + (castrado ? "Sim" : "Não"));
-        System.out.println("Voluntário: " + (voluntario != null ? voluntario.getNome() : "Não informado"));
         historicoMedico.exibirDetalhes();
     }
 }
